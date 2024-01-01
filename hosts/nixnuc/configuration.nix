@@ -24,9 +24,10 @@
   hardware.graphics = {
     enable = true;
     extraPackages = with pkgs; [
-      intel-vaapi-driver
+      intel-media-driver
     ];
   };
+  hardware.intel-gpu-tools.enable = true;
 
   security.polkit.enable = true;
   services.gvfs.enable = true;
@@ -96,11 +97,11 @@
 
   programs.firefox.enable = true;
 
+  nixpkgs.config.allowUnfree = true;
+
   environment = {
     localBinInPath = true;
-    sessionVariables = {
-      LIBVA_DRIVER_NAME = "iHD";
-    };
+    sessionVariables = { LIBVA_DRIVER_NAME = "iHD"; };
     systemPackages = with pkgs; [
       vim
       wget
