@@ -58,6 +58,20 @@
     vscode
   ];
 
+  programs.firefox = {
+    enable = true;
+    profiles.stephen = {
+      extensions = with inputs.firefox-addons.packages."x86_64-linux"; [
+        ublock-origin
+        tridactyl
+        bitwarden
+        org-capture
+        sponsorblock
+        dearrow
+      ];
+    };
+  };
+
   # Enable home-manager and git
   programs.home-manager.enable = true;
   programs.git.enable = true;
