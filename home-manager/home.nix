@@ -94,7 +94,26 @@
 
   programs.firefox = {
     enable = true;
+    policies = {
+        DisableTelemetry = true;
+        DisableFirefoxStudies = true;
+        DisablePocket = true;
+        OverrideFirstRunPage = "";
+        OverridePostUpdatePage = "";
+        DontCheckDefaultBrowser = true;
+        DisplayBookmarksToolbar = "never";
+
+        Preferences = {
+          "browser.contentblocking.category" = { Value = "strict"; Status = "locked"; };
+          # "extensions.pocket.enabled" = lock-false;
+        };
+    };
     profiles.stephen = {
+      search = {
+        default = "DuckDuckGo";
+        force = true;
+      };
+
       extensions = with inputs.firefox-addons.packages."x86_64-linux"; [
         ublock-origin
         tridactyl
@@ -102,6 +121,27 @@
         org-capture
         sponsorblock
         dearrow
+      ];
+
+      
+
+      bookmarks = [
+        {
+          name = "Sonarr";
+          url = "https://sonarr.steda.net";
+        }
+        {
+          name = "Radarr";
+          url = "https://radarr.steda.net";
+        }
+        {
+          name = "Lidarr";
+          url = "https://lidarr.steda.net";
+        }
+        {
+          name = "Sabnzbd";
+          url = "https://sabnzbd.steda.net";
+        }
       ];
     };
   };
