@@ -49,6 +49,7 @@
   home.packages = with pkgs; [
     stow
     fish
+    starship
     neovim
     emacs
     btop
@@ -59,7 +60,30 @@
     vscode
     ptyxis
     tealdeer
+    syncthing
+    nextcloud-client
+    fzf
+    fd
+    bat
+    flameshot
+    gnome.dconf-editor
+
+    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
   ];
+
+  services.syncthing.enable = true;
+
+  programs.fish = {
+    enable = true;
+    plugins = [
+      { name = "z"; src = pkgs.fishPlugins.z.src; }
+      { name = "fzf"; src = pkgs.fishPlugins.fzf-fish.src; }
+    ];
+  };
+
+  programs.starship = {
+    enable = true;
+  };
 
   programs.firefox = {
     enable = true;
@@ -74,6 +98,68 @@
       ];
     };
   };
+
+  # Configure gnome settings and keybindings.
+  dconf.settings = {
+    # This sections requires the pop-shell gnome extension.
+    "org/gnome/shell/extensions/pop-shell" = {
+      # Show border around window with focus
+      active-hint = true;
+      tile-by-default = true;
+
+      # Shortcuts to move focus
+      tile-mode-left = ["<Super>h"];
+      tile-move-down = ["<Super>j"];
+      tile-move-up = ["<Super>k"];
+      tile-move-right = ["<Super>l"];
+      
+      # Shortcuts to move windows
+      tile-move-left-global = ["<Super><Shift>h"];
+      tile-move-down-global = ["<Super><Shift>j"];
+      tile-move-up-global = ["<Super><Shift>k"];
+      tile-move-right-global = ["<Super><Shift>l"];
+    };
+
+    # Keybinds for workspace movement and windows movement between workspaces
+    "org/gnome/desktop/wm/keybindings" = {
+      # Move between workspaces
+      switch-to-workspace-1 = ["<Super>1"];
+      switch-to-workspace-2 = ["<Super>2"];
+      switch-to-workspace-3 = ["<Super>3"];
+      switch-to-workspace-4 = ["<Super>4"];
+
+      # Move windows between workspaces
+      move-to-workspace-1 = ["<Super><Shift>1"];
+      move-to-workspace-2 = ["<Super><Shift>2"];
+      move-to-workspace-3 = ["<Super><Shift>3"];
+      move-to-workspace-4 = ["<Super><Shift>4"];
+    };
+
+    # Custom keybind to enable caffeine
+    "org/gnome/shell/extensions/caffeine" = {
+      toggle-shortcut = ["<Shift><Control><Alt>F12"];
+    };
+
+    # Custom keybind to launch emacsclient
+    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5" = {
+      binding = "<Shift><Control><Alt>e";
+      command = "emacsclient -cn -a ''";
+      name = "Emacsclient";
+    };
+    # Custom keybind to launch org-capture
+    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6" = {
+      binding = "<Shift><Control><Alt>c";
+      command = "emacsclient -cn -a '' -e '(org-capture)'";
+      name = "Emacsclient Org-caApture";
+    };
+    # Custom keybind to flameshot for screenshots
+    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom9" = {
+      binding = "Print";
+      command = "flameshot gui";
+      name = "Launch flameshot";
+    };
+  };
+
 
   # Enable home-manager and git
   programs.home-manager.enable = true;
