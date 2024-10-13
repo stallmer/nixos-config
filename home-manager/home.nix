@@ -58,6 +58,7 @@
     yt-dlp
     vscode
     ptyxis
+    tealdeer
   ];
 
   programs.firefox = {
