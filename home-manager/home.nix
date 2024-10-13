@@ -54,6 +54,7 @@
     thunderbird
     mpv
     yt-dlp
+    vscode
   ];
 
   # Enable home-manager and git
