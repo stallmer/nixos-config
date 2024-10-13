@@ -101,8 +101,8 @@
     variant = "";
   };
 
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
+  # # Enable CUPS to print documents.
+  # services.printing.enable = true;
 
   # Enable sound with pipewire.
   hardware.pulseaudio.enable = false;
@@ -143,9 +143,9 @@
       # Be sure to change it (using passwd) after rebooting!
       initialPassword = "stephen";
       isNormalUser = true;
-      openssh.authorizedKeys.keys = [
-        # TODO: Add your SSH public key(s) here, if you plan on using SSH to connect
-      ];
+      # openssh.authorizedKeys.keys = [
+      #   # TODO: Add your SSH public key(s) here, if you plan on using SSH to connect
+      # ];
       # TODO: Be sure to add any other groups you need (such as networkmanager, audio, docker, etc)
       extraGroups = ["networkmanager" "wheel"];
     };
@@ -153,16 +153,16 @@
 
   # This setups a SSH server. Very important if you're setting up a headless system.
   # Feel free to remove if you don't need it.
-  services.openssh = {
-    enable = true;
-    settings = {
-      # Opinionated: forbid root login through SSH.
-      PermitRootLogin = "no";
-      # Opinionated: use keys only.
-      # Remove if you want to SSH using passwords
-      PasswordAuthentication = false;
-    };
-  };
+  # services.openssh = {
+    # enable = true;
+    # settings = {
+      # # Opinionated: forbid root login through SSH.
+      # PermitRootLogin = "no";
+      # # Opinionated: use keys only.
+      # # Remove if you want to SSH using passwords
+      # PasswordAuthentication = false;
+    # };
+  # };
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "24.05";
