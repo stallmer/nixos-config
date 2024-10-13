@@ -66,7 +66,14 @@
     fd
     bat
     flameshot
+
+    # Gnome utilities and extensions
     gnome.dconf-editor
+    gnome.gnome-tweaks
+    gnomeExtensions.pop-shell
+    gnomeExtensions.blur-my-shell
+    gnomeExtensions.dash-to-dock
+    gnomeExtensions.caffeine
 
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
   ];
