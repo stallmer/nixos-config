@@ -56,6 +56,7 @@
     mpv
     yt-dlp
     vscode
+    ptyxis
   ];
 
   programs.firefox = {
