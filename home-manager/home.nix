@@ -207,6 +207,12 @@
 
     # Keybinds for workspace movement and windows movement between workspaces
     "org/gnome/desktop/wm/keybindings" = {
+
+      # Remove some default keybindings
+      minimize = [];
+      maximize = [];
+      switch-to-workspace-last = [];
+
       # Move between workspaces
       switch-to-workspace-1 = ["<Super>1"];
       switch-to-workspace-2 = ["<Super>2"];
