@@ -129,6 +129,7 @@
     curl
     git
     firefox
+    tailscale
   ];
   
   # Install firefox.
@@ -155,6 +156,11 @@
   users.groups = {
     uinput.members = [ "stephen" ];
     input.members = [ "stephen" ];
+  };
+
+  services.tailscale = {
+    enable = true;
+    useRoutingFeatures = "client";
   };
 
   # This setups a SSH server. Very important if you're setting up a headless system.

@@ -66,7 +66,6 @@
     fd
     bat
     flameshot
-    tailscale
 
     # Gnome utilities and extensions
     gnome.dconf-editor
@@ -81,11 +80,6 @@
   ];
 
   services.syncthing.enable = true;
-
-  services.tailscale = {
-    enable = true;
-    useRoutingFeatures = "client";
-  };
 
   programs.fish = {
     enable = true;
