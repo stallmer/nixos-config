@@ -39,7 +39,6 @@
     };
   };
 
-  # TODO: Set your username
   home = {
     username = "stephen";
     homeDirectory = "/home/stephen";
@@ -75,11 +74,17 @@
     gnomeExtensions.blur-my-shell
     gnomeExtensions.dash-to-dock
     gnomeExtensions.caffeine
+    gnomeExtensions.tailscale-qs
 
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
   ];
 
   services.syncthing.enable = true;
+
+  services.tailscale = {
+    enable = true;
+    useRoutingFeatures = "client";
+  };
 
   programs.fish = {
     enable = true;
