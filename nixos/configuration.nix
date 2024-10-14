@@ -151,6 +151,12 @@
     };
   };
 
+  hardware.uinput.enable = true;
+  users.groups = {
+    uinput.members = [ "stephen" ];
+    input.members = [ "stephen" ];
+  };
+
   # This setups a SSH server. Very important if you're setting up a headless system.
   # Feel free to remove if you don't need it.
   # services.openssh = {

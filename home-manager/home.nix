@@ -14,6 +14,7 @@
 
     # You can also split up your configuration and import pieces of it here:
     # ./nvim.nix
+    inputs.xremap-flake.homeManagerModules.default
   ];
 
   nixpkgs = {
@@ -90,6 +91,16 @@
 
   programs.starship = {
     enable = true;
+  };
+
+  services.xremap = {
+    yamlConfig = ''
+      keymap:
+        - name: Hyper+Enter to terminal
+          remap:
+            Hyper-Enter: 
+              launch: ["ptyxis"]
+    '';
   };
 
   programs.firefox = {

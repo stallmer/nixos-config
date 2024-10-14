@@ -9,6 +9,10 @@
     home-manager.url = "github:nix-community/home-manager/release-24.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
+    # Configure keybindings
+    xremap-flake.url = "github:xremap/nix-flake";
+
+    # Install firefox addons using nix
     firefox-addons = {
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
