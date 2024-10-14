@@ -98,7 +98,7 @@
       keymap:
         - name: Hyper+Enter to terminal
           remap:
-            Hyper-Enter: 
+            Hyper_L-Enter: 
               launch: ["ptyxis"]
     '';
   };
