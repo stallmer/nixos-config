@@ -66,6 +66,7 @@
     fd
     bat
     flameshot
+    tailscale
 
     # Gnome utilities and extensions
     gnome.dconf-editor
