@@ -206,6 +206,12 @@
       move-to-workspace-4 = ["<Super><Shift>4"];
     };
 
+    # Set gnome scaling
+    "org/gnome/desktop/interface" = {
+      scaling-factor = lib.gvariant.mkUint32 2;
+    };
+
+
     # Custom keybind to enable caffeine
     "org/gnome/shell/extensions/caffeine" = {
       toggle-shortcut = ["<Shift><Control><Alt>F12"];
