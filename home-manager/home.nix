@@ -178,6 +178,11 @@
       tile-move-right-global = ["<Super><Shift>l"];
     };
 
+    # Turn on fraction scaling
+    "org/gnome/mutter" = {
+      experimental-features = ["scale-monitor-framebuffer"];
+    };
+
     # Remove defaults gnome application launch keybinds
     "org/gnome/shell/keybindings" = {
       switch-to-application-1 = [];
