@@ -141,7 +141,6 @@
         org-capture
         sponsorblock
         dearrow
-	tampermonkey
       ];
 
       
