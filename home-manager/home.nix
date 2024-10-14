@@ -106,17 +106,26 @@
   programs.firefox = {
     enable = true;
     policies = {
-        DisableTelemetry = true;
-        DisableFirefoxStudies = true;
-        DisablePocket = true;
-        OverrideFirstRunPage = "";
-        OverridePostUpdatePage = "";
-        DontCheckDefaultBrowser = true;
-        DisplayBookmarksToolbar = "never";
+        "DisableTelemetry" = true;
+        "DisableFirefoxStudies" = true;
+        "DisablePocket" = true;
+        "OverrideFirstRunPage" = "";
+        "OverridePostUpdatePage" = "";
+        "DontCheckDefaultBrowser" = true;
+        "DisplayBookmarksToolbar" = "never";
+	"SearchSuggestEnabled" = false;
+	"SanitizeOnShutdown" = {
+	  "Cache" = true;
+	  "Cookies" = true;
+	  "History" = true;
+	  "Sessions" = true;
+	  "SiteSettings" = true;
+	  "Locked" = true;
+	};
 
         Preferences = {
           "browser.contentblocking.category" = { Value = "strict"; Status = "locked"; };
-          # "extensions.pocket.enabled" = lock-false;
+          "extensions.pocket.enabled" = { Value = "false"; Statuus = "locked"; };
         };
     };
     profiles.stephen = {
@@ -132,6 +141,7 @@
         org-capture
         sponsorblock
         dearrow
+	tampermonkey
       ];
 
       
