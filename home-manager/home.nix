@@ -68,6 +68,7 @@
     gnomeExtensions.dash-to-dock
     gnomeExtensions.caffeine
     gnomeExtensions.tailscale-qs
+    gnomeExtensions.appindicator
 
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
   ];
