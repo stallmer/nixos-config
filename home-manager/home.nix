@@ -14,7 +14,7 @@
 
     # You can also split up your configuration and import pieces of it here:
     # ./nvim.nix
-    inputs.xremap-flake.homeManagerModules.default
+    # inputs.xremap-flake.homeManagerModules.default
   ];
 
   nixpkgs = {
@@ -61,8 +61,8 @@
     flameshot
 
     # Gnome utilities and extensions
-    gnome.dconf-editor
-    gnome.gnome-tweaks
+    dconf-editor
+    gnome-tweaks
     gnomeExtensions.pop-shell
     gnomeExtensions.blur-my-shell
     gnomeExtensions.dash-to-dock
@@ -84,16 +84,6 @@
 
   programs.starship = {
     enable = true;
-  };
-
-  services.xremap = {
-    yamlConfig = ''
-      keymap:
-        - name: Hyper+Enter to terminal
-          remap:
-            Hyper_L-q: 
-              launch: ["ptyxis"]
-    '';
   };
 
   programs.firefox = {
@@ -140,7 +130,7 @@
         org-capture
         sponsorblock
         dearrow
-        # tampermonkey
+        violentmonkey
       ];
 
       

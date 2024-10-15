@@ -33,12 +33,11 @@
       # FIXME replace with your hostname
       nixos = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
-        # > Our main nixos configuration file <
         modules = [./nixos/hosts/lemur/configuration.nix];
       };
       carbon = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
-	      modules = [./nixos/hosts/carbon/configuration.nix];
+        modules = [./nixos/hosts/carbon/configuration.nix];
       };
     };
 
