@@ -38,7 +38,7 @@
       };
       carbon = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
-	modules = [./nixos/hosts/carbon/configuration.nix];
+	      modules = [./nixos/hosts/carbon/configuration.nix];
       };
     };
 
