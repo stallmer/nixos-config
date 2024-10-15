@@ -105,6 +105,10 @@
 
   programs.firefox = {
     enable = true;
+    package = pkgs.firefox.override {
+      cfg = { enableTridactylNative = true; };
+    };
+
     policies = {
         "DisableTelemetry" = true;
         "DisableFirefoxStudies" = true;
@@ -122,7 +126,6 @@
 	      "SiteSettings" = true;
 	      "Locked" = true;
 	};
-
         Preferences = {
           "browser.contentblocking.category" = { Value = "strict"; Status = "locked"; };
           "extensions.pocket.enabled" = { Value = "false"; Statuus = "locked"; };
@@ -132,10 +135,6 @@
       search = {
         default = "Kagi";
         force = true;
-      };
-
-      package = pkgs.firefox.override {
-        cfg = { enableTridactylNative = true; };
       };
 
       extensions = with inputs.firefox-addons.packages."x86_64-linux"; [
