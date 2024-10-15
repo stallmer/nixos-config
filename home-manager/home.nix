@@ -106,9 +106,11 @@
   programs.firefox = {
     enable = true;
 
-    nativeMessagingHosts = [
-      tridactyl-native
-    ];
+    package = pkgs.firefox.override {
+      nativeMessagingHosts = [
+        pkgs.tridactyl-native
+      ];
+    };
 
     policies = {
         "DisableTelemetry" = true;
