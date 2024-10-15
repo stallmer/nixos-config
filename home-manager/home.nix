@@ -113,14 +113,14 @@
         "OverridePostUpdatePage" = "";
         "DontCheckDefaultBrowser" = true;
         "DisplayBookmarksToolbar" = "never";
-	"SearchSuggestEnabled" = false;
-	"SanitizeOnShutdown" = {
-	  "Cache" = true;
-	  "Cookies" = true;
-	  "History" = true;
-	  "Sessions" = true;
-	  "SiteSettings" = true;
-	  "Locked" = true;
+	      "SearchSuggestEnabled" = false;
+	      "SanitizeOnShutdown" = {
+	      "Cache" = true;
+	      "Cookies" = true;
+	      "History" = true;
+	      "Sessions" = true;
+	      "SiteSettings" = true;
+	      "Locked" = true;
 	};
 
         Preferences = {
@@ -130,8 +130,12 @@
     };
     profiles.stephen = {
       search = {
-        default = "DuckDuckGo";
+        default = "Kagi";
         force = true;
+      };
+
+      package = pkgs.firefox.override {
+        cfg = { enableTridactylNative = true; };
       };
 
       extensions = with inputs.firefox-addons.packages."x86_64-linux"; [
@@ -141,6 +145,7 @@
         org-capture
         sponsorblock
         dearrow
+        tampermonkey
       ];
 
       
