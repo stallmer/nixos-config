@@ -1,12 +1,15 @@
 { config, pkgs, ... }:
 let
-  dotfiles = "${config.home.homeDirectory}/nixos-dotfiles/config";
+  dotfiles = "${config.home.homeDirectory}/nixos-config/config";
   create_symlink = path: config.lib.file.mkOutOfStoreSymlink path;
 
   # Standard .config/directory
   configs = {
     emacs = "emacs";
     tmux = "tmux";
+    tealdeer = "tealdeer";
+    hyprland = "hypr";
+    kitty = "kitty";
   };
 in
 {
@@ -17,7 +20,7 @@ in
   programs.bash = {
     enable = true;
     shellAliases = {
-      nrs = "sudo nixos-rebuild switch --flake ~/nixos-dotfiles#carbon";
+      nrs = "sudo nixos-rebuild switch --flake ~/nixos-config#carbon";
     };
   };
 
@@ -40,5 +43,6 @@ in
     emacs
     bitwarden-desktop
     nerd-fonts.jetbrains-mono
+    tealdeer
   ];
 }

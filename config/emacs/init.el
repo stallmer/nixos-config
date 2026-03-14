@@ -117,8 +117,6 @@
   :after (treemacs magit)
   :ensure t)
 
-(treemacs-start-on-boot)
-
 ;; Ivy Configuration -----------------------------------------------------------
 
 (use-package ivy
@@ -152,11 +150,8 @@
   :init (doom-modeline-mode 1)
   :custom ((doom-modeline-height 15)))
 
-(setq doom-gruvbox-material-background "medium"
-      doom-gruvbox-material-palette    "material")
-
 (use-package doom-themes
-  :init (load-theme 'doom-gruvbox-material t))
+  :init (load-theme 'doom-nord t))
 
 (use-package rainbow-delimiters
   :hook (prog-mode . rainbow-delimiters-mode))
