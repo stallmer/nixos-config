@@ -38,6 +38,7 @@
     kitty
     waybar
     tmux
+    thunar
     tailscale
     hyprlock
     hypridle
