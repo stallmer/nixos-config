@@ -8,7 +8,7 @@ let
     emacs = "emacs";
     tmux = "tmux";
     tealdeer = "tealdeer";
-    hyprland = "hypr";
+    hypr = "hypr";
     kitty = "kitty";
   };
 in

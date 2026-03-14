@@ -39,6 +39,9 @@
     waybar
     tmux
     tailscale
+    hyprlock
+    hypridle
+    hyprpaper
   ];
 
   services.tailscale.enable = true;
