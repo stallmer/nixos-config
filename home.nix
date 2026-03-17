@@ -10,6 +10,7 @@ let
     tealdeer = "tealdeer";
     hypr = "hypr";
     kitty = "kitty";
+    waybar = "waybar";
   };
 in
 {
