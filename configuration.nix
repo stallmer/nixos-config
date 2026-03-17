@@ -17,6 +17,8 @@
 
   services.displayManager.ly.enable = true;
 
+  services.tlp.enable = true;
+
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
