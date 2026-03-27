@@ -45,5 +45,6 @@ in
     bitwarden-desktop
     nerd-fonts.jetbrains-mono
     tealdeer
+    chromium
   ];
 }

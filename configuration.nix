@@ -19,6 +19,22 @@
 
   services.tlp.enable = true;
 
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+    settings = {
+      General = {
+	# Shows battery charge of connected devices
+        Experimental = true;
+      };
+      Policy = {
+        AutoEnable = true;
+      };
+    };
+  };
+
+  services.blueman.enable = true;
+
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
