@@ -27,6 +27,8 @@
         "custom/sep",
         "clock",
         "custom/sep",
+	"battery",
+	"custom/sep",
         "tray"
     ],
 
@@ -43,14 +45,6 @@
     "hyprland/window" : {
         "max-length": 40,
         "seperate-outputs": false
-    },
-    "tray": {
-        // "icon-size": 21,
-        "spacing": 10
-        // "icons": {
-        //   "blueman": "bluetooth",
-        //   "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
-        // }
     },
     "clock": {
         "format-alt": "{:%Y-%m-%d}"
@@ -75,7 +69,7 @@
         },
         "format": "Bat: {capacity}% {icon} {time}",
         "format-plugged": "{capacity}% ",
-        "format-alt": "Bat {capacity}%",
+        "format-alt": "Bat: {capacity}%",
         "format-time": "{H}:{M}",
         "format-icons": ["", "", "", "", ""]
     },
