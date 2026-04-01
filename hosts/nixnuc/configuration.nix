@@ -100,6 +100,9 @@
     hypridle
     hyprpaper
     pavucontrol
+    qemu
+    quickemu
+    spice-gtk
   ];
 
   services.tailscale.enable = true;

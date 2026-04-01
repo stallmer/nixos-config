@@ -21,7 +21,7 @@ in
   programs.bash = {
     enable = true;
     shellAliases = {
-      nrs = "sudo nixos-rebuild switch --flake ~/nixos-config#carbon";
+      nrs = "sudo nixos-rebuild switch --flake ~/nixos-config";
     };
   };
 
