@@ -24,6 +24,15 @@ in
       nrs = "sudo nixos-rebuild switch --flake ~/nixos-config";
     };
   };
+  programs.atuin = {
+    enable = true;
+    settings = {
+      auto_sync = true;
+      sync_frequency = "5m";
+      sync_address = "https://api.atuin.sh";
+      search_mode = "fuzzy";
+    };
+  };
 
   xdg.configFile = builtins.mapAttrs
     (name: subpath: {
@@ -37,6 +46,7 @@ in
     ripgrep
     nil
     nixpkgs-fmt
+    fzf
     nodejs
     gcc
     rofi
