@@ -21,6 +21,14 @@
   
   services.displayManager.ly.enable = true;
 
+  hardware.graphics = {
+    enable = true;
+    extraPackages = with pkgs; [
+      intel-vaapi-driver
+    ];
+  };
+  environment.sessionVariables = { LIBVA_DRIVER_NAME = "iHD"; };
+
   hardware.bluetooth = {
     enable = true;
     powerOnBoot = true;
