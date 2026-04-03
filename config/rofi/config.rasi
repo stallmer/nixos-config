@@ -1,3 +1,2 @@
-configuration {
-	theme: "~/.config/rofi/themes/nord.rasi";
-}
+
+@theme "/home/stephen/.config/rofi/themes/squared-nord.rasi"
