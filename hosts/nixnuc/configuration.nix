@@ -29,6 +29,19 @@
   };
   environment.sessionVariables = { LIBVA_DRIVER_NAME = "iHD"; };
 
+  xdg.portal = {
+    enable = true;
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-gtk
+      xdg-desktop-portal-hyprland
+    ];
+    config = {
+      hyprland = {
+        default = [ "hyprland" "gtk" ];
+      };
+    };
+  };
+
   hardware.bluetooth = {
     enable = true;
     powerOnBoot = true;
@@ -48,6 +61,8 @@
     enable = true;
     xwayland.enable = true;
   };
+
+  services.flatpak.enable = true;
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
