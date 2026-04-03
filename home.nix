@@ -57,6 +57,8 @@ in
     nerd-fonts.jetbrains-mono
     tealdeer
     chromium
+    mpv
+    yt-dlp
   ];
 
   home.pointerCursor = {
