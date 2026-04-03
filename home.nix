@@ -11,6 +11,7 @@ let
     hypr = "hypr";
     kitty = "kitty";
     waybar = "waybar";
+    rofi = "rofi";
   };
 in
 {
