@@ -11,6 +11,7 @@ let
     hypr = "hypr";
     kitty = "kitty";
     waybar = "waybar";
+    rofi = "rofi";
   };
 in
 {
@@ -57,6 +58,8 @@ in
     nerd-fonts.jetbrains-mono
     tealdeer
     chromium
+    mpv
+    yt-dlp
   ];
 
   home.pointerCursor = {
