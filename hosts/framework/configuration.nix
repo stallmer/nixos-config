@@ -14,7 +14,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  nntworking.hostName = "framework"; # Define your hostname.
+  networking.hostName = "framework"; # Define your hostname.
   networking.networkmanager.enable = true;
 
   time.timeZone = "America/Los_Angeles";
@@ -63,6 +63,11 @@
   };
 
   services.flatpak.enable = true;
+
+  services.syncthing = {
+    enable = true;
+    openDefaultPorts = true;
+  };
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
