@@ -37,6 +37,7 @@ in
   };
   programs.yazi = {
     enable = true;
+    shellWrapperName = "y";
   };
 
   xdg.configFile = builtins.mapAttrs

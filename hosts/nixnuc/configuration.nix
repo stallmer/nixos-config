@@ -29,6 +29,9 @@
   };
   environment.sessionVariables = { LIBVA_DRIVER_NAME = "iHD"; };
 
+  services.gvfs.enable = true;
+  services.tumbler.enable = true;
+
   xdg.portal = {
     enable = true;
     extraPortals = with pkgs; [
