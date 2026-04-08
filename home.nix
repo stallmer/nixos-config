@@ -34,6 +34,9 @@ in
       search_mode = "fuzzy";
     };
   };
+  programs.yazi = {
+    enable = true;
+  };
 
   xdg.configFile = builtins.mapAttrs
     (name: subpath: {
