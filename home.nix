@@ -26,6 +26,7 @@ in
       s = "kitten ssh";
     };
   };
+
   programs.atuin = {
     enable = true;
     settings = {
@@ -35,6 +36,7 @@ in
       search_mode = "fuzzy";
     };
   };
+
   programs.yazi = {
     enable = true;
     shellWrapperName = "y";
@@ -72,5 +74,9 @@ in
     package = pkgs.bibata-cursors;
     name = "Bibata-Modern-Classic";
     size = 24;
+  };
+
+  services.udiskie = {
+    enable = true;
   };
 }

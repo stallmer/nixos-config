@@ -29,6 +29,7 @@
   };
   environment.sessionVariables = { LIBVA_DRIVER_NAME = "iHD"; };
 
+  services.udisks.enable = true;
   services.gvfs.enable = true;
   services.tumbler.enable = true;
 
