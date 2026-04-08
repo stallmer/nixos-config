@@ -57,6 +57,7 @@ in
     thunar
     emacs
     bitwarden-desktop
+    keepassxc
     nerd-fonts.jetbrains-mono
     tealdeer
     chromium
