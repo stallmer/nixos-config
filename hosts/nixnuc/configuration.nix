@@ -68,34 +68,9 @@
 
   services.flatpak.enable = true;
 
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-  # Select internationalisation properties.
-  # i18n.defaultLocale = "en_US.UTF-8";
-  # console = {
-  #   font = "Lat2-Terminus16";
-  #   keyMap = "us";
-  #   useXkbConfig = true; # use xkb.options in tty.
-  # };
-
-  # Enable the X11 windowing system.
-  # services.xserver.enable = true;
-
-
-  
-
-  # Configure keymap in X11
-  # services.xserver.xkb.layout = "us";
-  # services.xserver.xkb.options = "eurosign:e,caps:escape";
-
   # Enable CUPS to print documents.
   # services.printing.enable = true;
 
-  # Enable sound.
-  # services.pulseaudio.enable = true;
-  # OR
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -140,6 +115,17 @@
   ];
 
   services.tailscale.enable = true;
+
+  udev.extraRules = ''
+  \# 2.4GHz/Dongle
+  
+  KERNEL=="hidraw\*", ATTRS{idProduct}=="6012", ATTRS{idVendor}=="2dc8", MODE="0660", GROUP="input"
+
+  \# Bluetooth
+
+  KERNEL=="hidraw\*", KERNELS=="\*2DC8:6012\*", MODE="0660", GROUP="input"
+
+  '';
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
