@@ -29,9 +29,9 @@
   };
   environment.sessionVariables = { LIBVA_DRIVER_NAME = "iHD"; };
 
-  services.udisks2.enable = true;
+  services.polkit.enable = true;
   services.gvfs.enable = true;
-  services.tumbler.enable = true;
+  services.udisks2.enable = true;
 
   xdg.portal = {
     enable = true;
@@ -135,6 +135,8 @@
     qemu
     quickemu
     spice-gtk
+    jmtpfs
+    mtpfs
   ];
 
   services.tailscale.enable = true;
