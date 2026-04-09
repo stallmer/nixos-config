@@ -117,14 +117,11 @@
   services.tailscale.enable = true;
 
   udev.extraRules = ''
-  \# 2.4GHz/Dongle
-  
-  KERNEL=="hidraw\*", ATTRS{idProduct}=="6012", ATTRS{idVendor}=="2dc8", MODE="0660", GROUP="input"
+  # 8bitdo 2.4 GHz / Wired
+  KERNEL=="hidraw*", ATTRS{idVendor}=="2dc8", MODE="0660", TAG+="uaccess"
 
-  \# Bluetooth
-
-  KERNEL=="hidraw\*", KERNELS=="\*2DC8:6012\*", MODE="0660", GROUP="input"
-
+  # 8bitdo Bluetooth
+  KERNEL=="hidraw*", KERNELS=="*2DC8:*", MODE="0660", TAG+="uaccess"
   '';
 
   # Some programs need SUID wrappers, can be configured further or are
