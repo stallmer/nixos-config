@@ -29,7 +29,7 @@
   };
   environment.sessionVariables = { LIBVA_DRIVER_NAME = "iHD"; };
 
-  services.polkit.enable = true;
+  security.polkit.enable = true;
   services.gvfs.enable = true;
   services.udisks2.enable = true;
 
