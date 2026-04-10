@@ -54,6 +54,7 @@ in
     ripgrep
     nil
     nixpkgs-fmt
+    wl-clipboard
     fzf
     nodejs
     gcc

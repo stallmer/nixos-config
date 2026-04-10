@@ -116,7 +116,7 @@
 
   services.tailscale.enable = true;
 
-  udev.extraRules = ''
+  services.udev.extraRules = ''
   # 8bitdo 2.4 GHz / Wired
   KERNEL=="hidraw*", ATTRS{idVendor}=="2dc8", MODE="0660", TAG+="uaccess"
 
