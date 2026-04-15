@@ -27,7 +27,6 @@
       intel-vaapi-driver
     ];
   };
-  environment.sessionVariables = { LIBVA_DRIVER_NAME = "iHD"; };
 
   security.polkit.enable = true;
   services.gvfs.enable = true;
@@ -85,7 +84,7 @@
   # services.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.stephen= {
+  users.users.stephen = {
     isNormalUser = true;
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
     packages = with pkgs; [
@@ -95,25 +94,51 @@
 
   programs.firefox.enable = true;
 
-  environment.systemPackages = with pkgs; [
-    vim
-    wget
-    vim
-    kitty
-    waybar
-    tmux
-    tailscale
-    hyprlock
-    hypridle
-    hyprpaper
-    pavucontrol
-    qemu
-    quickemu
-    spice-gtk
-    jmtpfs
-    mtpfs
-    bind
-  ];
+  environment = {
+    localBinInPath = true;
+    sessionVariables = {
+      LIBVA_DRIVER_NAME = "iHD";
+    };
+    systemPackages = with pkgs; [
+      vim
+      wget
+      vim
+      kitty
+      waybar
+      tmux
+      tailscale
+      hyprlock
+      hypridle
+      hyprpaper
+      pavucontrol
+      qemu
+      quickemu
+      spice-gtk
+      jmtpfs
+      mtpfs
+      bind
+    ];
+  };
+
+#  environment.systemPackages = with pkgs; [
+#    vim
+#    wget
+#    vim
+#    kitty
+#    waybar
+#    tmux
+#    tailscale
+#    hyprlock
+#    hypridle
+#    hyprpaper
+#    pavucontrol
+#    qemu
+#    quickemu
+#    spice-gtk
+#    jmtpfs
+#    mtpfs
+#    bind
+#  ];
 
   services.tailscale.enable = true;
 

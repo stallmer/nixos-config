@@ -46,7 +46,6 @@ in
     (name: subpath: {
       source = create_symlink "${dotfiles}/${subpath}";
       recursive = true;
-    })
     configs;
 
   home.packages = with pkgs; [
