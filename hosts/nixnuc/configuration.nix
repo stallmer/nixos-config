@@ -112,6 +112,7 @@
     spice-gtk
     jmtpfs
     mtpfs
+    bind
   ];
 
   services.tailscale.enable = true;
