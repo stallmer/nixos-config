@@ -27,7 +27,10 @@
       intel-vaapi-driver
     ];
   };
-  environment.sessionVariables = { LIBVA_DRIVER_NAME = "iHD"; };
+
+  security.polkit.enable = true;
+  services.gvfs.enable = true;
+  services.udisks2.enable = true;
 
   xdg.portal = {
     enable = true;
@@ -69,36 +72,11 @@
     openDefaultPorts = true;
   };
 
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-  # Select internationalisation properties.
-  # i18n.defaultLocale = "en_US.UTF-8";
-  # console = {
-  #   font = "Lat2-Terminus16";
-  #   keyMap = "us";
-  #   useXkbConfig = true; # use xkb.options in tty.
-  # };
-
-  # Enable the X11 windowing system.
-  # services.xserver.enable = true;
-
-
-  
-
-  # Configure keymap in X11
-  # services.xserver.xkb.layout = "us";
-  # services.xserver.xkb.options = "eurosign:e,caps:escape";
-
-  # Enable CUPS to print documents.
-  # services.printing.enable = true;
-
-  # Enable sound.
-  # services.pulseaudio.enable = true;
-  # OR
+  security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
     pulse.enable = true;
   };
 
@@ -118,22 +96,29 @@
 
   programs.firefox.enable = true;
 
-  environment.systemPackages = with pkgs; [
-    vim
-    wget
-    vim
-    kitty
-    waybar
-    tmux
-    tailscale
-    hyprlock
-    hypridle
-    hyprpaper
-    pavucontrol
-    qemu
-    quickemu
-    spice-gtk
-  ];
+  environment = {
+    localBinInPath = true;
+    sessionVariables = {
+      LIBVA_DRIVER_NAME = "iHD";
+    };
+    systemPackages = with pkgs; [
+      vim
+      wget
+      kitty
+      waybar
+      tmux
+      hyprlock
+      hypridle
+      hyprpaper
+      pavucontrol
+      qemu
+      quickemu
+      spice-gtk
+      jmtpfs
+      mtpfs
+      bind
+    ];
+  };
 
   services.tailscale.enable = true;
 
