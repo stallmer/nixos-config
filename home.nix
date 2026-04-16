@@ -12,6 +12,7 @@ let
     kitty = "kitty";
     waybar = "waybar";
     rofi = "rofi";
+    mpv = "mpv";
   };
 in
 {
@@ -46,6 +47,7 @@ in
     (name: subpath: {
       source = create_symlink "${dotfiles}/${subpath}";
       recursive = true;
+    })
     configs;
 
   home.packages = with pkgs; [
