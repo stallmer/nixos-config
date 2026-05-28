@@ -107,6 +107,7 @@
       wget
       kitty
       waybar
+      noctalia-shell
       tmux
       hyprlock
       hypridle
