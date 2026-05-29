@@ -60,6 +60,9 @@
   
   services.blueman.enable = true;
 
+  services.upower.enable = true;
+  services.power-profiles-daemon.enable = true;
+
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
@@ -84,6 +87,24 @@
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.libinput.enable = true;
+  services.keyd = {
+    enable = true;
+    keyboards = {
+      default = {
+        ids = [ "*" ];
+	settings = {
+	  main = {
+            # Remap LEFT CTRL to be held down as CTRL+ALT+SUPER
+	    leftcontrol = "layer(ctrl_alt_super)";
+
+	    # Remap CAPSLOCK to RIGHT CTRL
+	    capslock = "rightcontrol";
+	  };
+	  "ctrl_alt_super:C-A-M" = {};
+	};
+      };
+    };
+  };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.stephen= {
@@ -106,7 +127,6 @@
       wget
       kitty
       waybar
-      #noctalia-shell
       tmux
       hyprlock
       hypridle
