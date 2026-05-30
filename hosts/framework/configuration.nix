@@ -138,6 +138,7 @@
       jmtpfs
       mtpfs
       bind
+      brightnessctl
     ];
   };
 
