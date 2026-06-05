@@ -68,8 +68,10 @@
 
   services.flatpak.enable = true;
 
-  # Enable CUPS to print documents.
-  # services.printing.enable = true;
+  services.syncthing = {
+    enable = true;
+    openDefaultPorts = true;
+  };
 
   security.rtkit.enable = true;
   services.pipewire = {
@@ -103,11 +105,10 @@
     systemPackages = with pkgs; [
       vim
       wget
-      vim
       kitty
       waybar
+      noctalia-shell
       tmux
-      tailscale
       hyprlock
       hypridle
       hyprpaper
@@ -122,26 +123,6 @@
       gearlever
     ];
   };
-
-#  environment.systemPackages = with pkgs; [
-#    vim
-#    wget
-#    vim
-#    kitty
-#    waybar
-#    tmux
-#    tailscale
-#    hyprlock
-#    hypridle
-#    hyprpaper
-#    pavucontrol
-#    qemu
-#    quickemu
-#    spice-gtk
-#    jmtpfs
-#    mtpfs
-#    bind
-#  ];
 
   services.tailscale.enable = true;
 
