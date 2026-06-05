@@ -126,6 +126,7 @@
       vim
       wget
       kitty
+      noctalia-shell
       waybar
       tmux
       hyprlock
