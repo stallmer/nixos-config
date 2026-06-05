@@ -118,6 +118,8 @@
       jmtpfs
       mtpfs
       bind
+      appimage-run
+      gearlever
     ];
   };
 
