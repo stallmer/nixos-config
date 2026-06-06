@@ -70,6 +70,11 @@
 
   services.flatpak.enable = true;
 
+  programs.appimage = {
+    enable = true;
+    binfmt = true;
+  };
+
   services.syncthing = {
     enable = true;
     openDefaultPorts = true;
@@ -139,6 +144,8 @@
       jmtpfs
       mtpfs
       bind
+      appimage-run
+      gearlever
       brightnessctl
     ];
   };
