@@ -52,6 +52,7 @@ in
 
   home.packages = with pkgs; [
     neovim
+    obsidian
     ripgrep
     nil
     nixpkgs-fmt

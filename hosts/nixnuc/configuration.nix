@@ -99,6 +99,11 @@
 
   nixpkgs.config.allowUnfree = true;
 
+  programs.appimage = {
+    enable = true;
+    binfmt = true;
+  };
+
   environment = {
     localBinInPath = true;
     sessionVariables = { LIBVA_DRIVER_NAME = "iHD"; };
