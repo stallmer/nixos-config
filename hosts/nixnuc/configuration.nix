@@ -68,11 +68,6 @@
 
   services.flatpak.enable = true;
 
-  services.syncthing = {
-    enable = true;
-    openDefaultPorts = true;
-  };
-
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;

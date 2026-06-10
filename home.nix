@@ -89,4 +89,13 @@ in
     enable = true;
     automount = true;
   };
+
+  services.syncthing = {
+    enable = true;
+    settings = {
+      devices = {
+        "tardis" = { id = "3QF5EY7-H5XOXMN-QAJQKZG-BT4G2CY-V5IITD2-SGXMSGU-WG4QOLW-BZ5UKAJ"; };
+      };
+    };
+  };
 }
