@@ -70,6 +70,11 @@ in
     chromium
     mpv
     yt-dlp
+    aerc
+    msmtp
+    vdirsyncer
+    khard
+    isync
   ];
 
   home.pointerCursor = {
