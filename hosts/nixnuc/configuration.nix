@@ -126,6 +126,7 @@
       bind
       appimage-run
       gearlever
+      gnupg
     ];
   };
 

@@ -64,6 +64,7 @@ in
     thunar
     emacs
     bitwarden-desktop
+    pass
     keepassxc
     nerd-fonts.jetbrains-mono
     tealdeer
